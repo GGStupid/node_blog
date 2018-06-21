@@ -27,17 +27,17 @@ git clone https://gitee.com/f2e-npm/node-koa-egg-vue.git
 ### 参考
 [Egg官网地址](https://eggjs.org/zh-cn/intro/index.html)
 
-bcrypt：对密码等进行加密的加密工具，具体[地址](https://www.npmjs.com/package/bcrypt)
+[bcrypt](https://www.npmjs.com/package/bcrypt)
 
-jsonwebtoken：jwt，具体[地址](https://jwt.io/)
+[jsonwebtoken](https://jwt.io/)
 
-koa：koa框架，具体[地址](http://www.koacn.com/)
+[koa](http://www.koacn.com/)
 
-koa-bodyparser：处理post请求中间件，具体[地址](https://www.npmjs.com/package/koa-bodyparser)
+[koa-bodyparser](https://www.npmjs.com/package/koa-bodyparser)
 
-koa-router：路由中间件,具体[地址](https://www.npmjs.com/package/koa-router)
+[koa-router](https://www.npmjs.com/package/koa-router)
 
-mongoose：mongodb的orm,具体[地址](http://mongoosejs.com/)
+[mongoose](http://mongoosejs.com/)
 
-validator:验证密码，用户名等的工具，很好用，具体[地址](https://www.npmjs.com/package/validator)
+[validator](https://www.npmjs.com/package/validator)
 

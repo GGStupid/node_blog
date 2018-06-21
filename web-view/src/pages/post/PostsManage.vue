@@ -38,7 +38,8 @@ export default {
                 },
                 on: {
                   click: () => {
-                    this.delPost(params.row._id)
+                    // this.delPost(params.row._id)
+                    this.async(params.row._id)
                   }
                 }
               }, '删除'),
@@ -78,6 +79,17 @@ export default {
           this.data1 = arr
         } else {
           this.$Message.error(res.msg)
+        }
+      })
+    },
+    async (id) {
+      this.$Modal.confirm({
+        title: '删除文章',
+        content: '<p>你确定要删除该文章吗？</p>',
+        loading: true,
+        onOk: () => {
+          this.delPost(id)
+          this.$Modal.remove()
         }
       })
     },

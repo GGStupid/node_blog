@@ -30,9 +30,4 @@ const PostSchema = new Schema({
   }
 }, { versionKey: false })
 
-PostSchema.pre('save', function (next) {
-  this.updateAt = Date.now()
-  next()
-})
-
 module.exports = mongoose.model('Post', PostSchema)

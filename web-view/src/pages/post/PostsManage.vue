@@ -31,17 +31,17 @@ export default {
           key: 'edit',
           render: (h, params) => {
             return h('div', [
-              h('Button', {
-                props: {
-                  type: 'error',
-                  size: 'small'
-                },
-                on: {
-                  click: () => {
-                    this.delPost(params.row._id)
-                  }
-                }
-              }, '删除'),
+              // h('Button', {
+              //   props: {
+              //     type: 'error',
+              //     size: 'small'
+              //   },
+              //   on: {
+              //     click: () => {
+              //       this.delPost(params.row._id)
+              //     }
+              //   }
+              // }, '删除'),
               h('Button', {
                 props: {
                   type: 'primary',

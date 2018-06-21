@@ -17,15 +17,14 @@ class PostController extends Controller {
     };
   }
   /*
-* 根据文章ID获取文章信息
+* 根据文章ID获取文章信息并更新pv
 * @param  {String} id id
 * @return {object}  post 文章
 */
   async queryPostById() {
     const { ctx, service } = this;
     const id = ctx.params.id;
-    await service.post.queryPostPvAdd(id);
-    const post = await service.post.queryPostById(id);
+    const post = await service.post.queryPostPvAdd(id);
     ctx.body = {
       code: 200,
       data: post,

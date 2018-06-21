@@ -4,6 +4,12 @@ const userService = require('../services/user.js')
 const tokenMid = require('../middle/tokenMid.js')
 
 module.exports = {
+  /*
+   * 登录
+   * @param  {String} name 登录名
+   * @param  {String} password 登录密码
+   * return  {Object} data 用户名和token
+   */
   async login (ctx) {
     const { name, password } = ctx.request.body
     if (!name || !password) {
@@ -45,6 +51,13 @@ module.exports = {
       }
     }
   },
+  /*
+   * 注册
+   * @param  {String} name 登录名
+   * @param  {String} password 登录密码
+   * @param  {String} repassword 二次密码
+   * return  {String} data 注册信息
+   */
   async register (ctx) {
     let name = ctx.request.body.name
     let password = ctx.request.body.password
@@ -75,8 +88,5 @@ module.exports = {
       msg: '成功',
       success: true
     }
-  },
-  async logout (ctx) {
-
   }
 }

@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/koa-demo')
 const db = mongoose.connection
 db.on('error', (e) => {
-  console.log('ttdfgsfst', e)
+  console.log('err', e)
 })
 db.on('open', (e) => {
   console.log('db connect success')

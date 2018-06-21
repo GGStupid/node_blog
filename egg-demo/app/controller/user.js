@@ -57,6 +57,7 @@ class UserController extends Controller {
    * 注册
    * @param  {String} name 登录名
    * @param  {String} password 登录密码
+   * @param  {String} repassword 二次密码
    * return  {String} data 注册信息
    */
   async register() {

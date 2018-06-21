@@ -4,11 +4,11 @@ const Service = require('egg').Service;
 
 class PostService extends Service {
   /*
-* 新建文章
-* @param {String} title 标题
-* @param {String} content 内容
-* @param {String} author 作者
-*/
+  * 新建文章
+  * @param {String} title 标题
+  * @param {String} content 内容
+  * @param {String} author 作者
+  */
   newAndSave(title, content, author) {
     const post = new this.ctx.model.Post({
       title,
@@ -43,27 +43,20 @@ class PostService extends Service {
     }).populate('author', { name: 1, _id: 0 }, 'User').exec();
   }
   /*
-  * 根据标题模糊搜索文章
-  * @param {String} title 标题
+  * 根据文章ID更新pv值并返回文章信息
+  * @param {String} id 文章Id
   */
   queryPostPvAdd(id) {
     const query = { _id: id };
     const update = { $inc: { pv: 1 } };
-    return this.ctx.model.Post.findByIdAndUpdate(query, update).exec();
+    return this.ctx.model.Post.findByIdAndUpdate(query, update, { new: 1 }).populate('author', { name: 1, _id: 0 }, 'User').exec();
   }
   /*
-* 根据文章ID获取文章信息
-* @param  {String} id id
-*/
-  queryPostById(id) {
-    return this.ctx.model.Post.findById(id).populate('author', { name: 1, _id: 0 }, 'User').exec();
-  }
-  /*
- * 根据文章Id删除文章
- * @param {String} id 文章Id
- * @param {String} title 标题
- * @param {String} content 内容
- */
+  * 根据文章Id更新文章
+  * @param {String} id 文章Id
+  * @param {String} title 标题
+  * @param {String} content 内容
+  */
   updatePostById(id, title, content) {
     const update = {
       title,

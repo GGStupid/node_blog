@@ -17,8 +17,5 @@ module.exports = {
       ctx.throw(402, 'invalid token')
     }
     await next()
-  },
-  getToken (ctx) {
-
   }
 } 

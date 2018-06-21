@@ -36,9 +36,12 @@ function checkStatus (response) {
   throw error
 }
 
+const baseProxy = `/${process.env.NODE_ENV}/api`
+console.log(baseProxy)
+
 var instance = axios.create({
   timeout: 5000,
-  baseURL: '/egg/api'
+  baseURL: baseProxy
 })
 
 instance.interceptors.request.use(

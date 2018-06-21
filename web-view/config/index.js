@@ -3,16 +3,18 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-const baseProxy = `/${process.env.NODE_ENV}/api`
-console.log(baseProxy)
+
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/egg/api': {
+        target: 'http://localhost:3000',  // 接口域名
+        changeOrigin: true,  //是否跨域
+      },
+      '/koa/api': {
         target: 'http://localhost:3000',  // 接口域名
         changeOrigin: true,  //是否跨域
       }

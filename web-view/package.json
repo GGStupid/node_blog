@@ -7,9 +7,10 @@
   "scripts": {
     "dev:koa": "NODE_ENV=koa webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "dev:egg": "NODE_ENV=egg webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "build:koa": "NODE_ENV=koa node build/build.js",
+    "build:egg": "NODE_ENV=egg node build/build.js",
     "start": "npm run dev",
-    "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "axios": "^0.18.0",

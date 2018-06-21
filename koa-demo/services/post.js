@@ -48,7 +48,7 @@ module.exports = {
   queryPostPvAdd (id) {
     const query = { _id: id };
     const update = { $inc: { pv: 1 } };
-    return this.ctx.model.Post.findByIdAndUpdate(query, update, { new: 1 }).populate('author', { name: 1, _id: 0 }, 'User').exec();
+    return PostModel.findByIdAndUpdate(query, update, { new: 1 }).populate('author', { name: 1, _id: 0 }, 'User').exec();
   },
   /*
   * 根据文章Id更新文章

@@ -11,7 +11,7 @@ web-view 是前台页面
 
 ### git地址
 ```
-git clone https://gitee.com/f2e-npm/node-koa-egg-vue.git
+git clone https://github.com/GGStupid/node_blog.git
 ```
 
 #### 登录注册

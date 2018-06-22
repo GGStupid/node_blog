@@ -12,6 +12,7 @@ import PostsManage from '@/pages/post/PostsManage'
 Vue.use(Router)
 
 export default new Router({
+  base: '/vueapp/',
   mode: 'history',
   routes: [
     {

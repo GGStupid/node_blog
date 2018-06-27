@@ -37,7 +37,6 @@ function checkStatus (response) {
 }
 
 const baseProxy = `/${process.env.NODE_ENV}/api`
-console.log(baseProxy)
 
 var instance = axios.create({
   timeout: 5000,

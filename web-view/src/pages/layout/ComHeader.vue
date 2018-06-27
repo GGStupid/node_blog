@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrap">
-    <Menu ref="menu" mode="horizontal" :theme="theme" @on-select="selectHandle">
+    <Menu ref="menu" mode="horizontal" active-name="1" :theme="theme" @on-select="selectHandle">
       <MenuItem name="1">
       <Icon type="ios-paper"></Icon>
       首页
@@ -70,6 +70,20 @@ export default {
           this.$Message.error(res.msg)
         }
       })
+    }
+  },
+  watch: {
+    $route (to, from) {
+      switch (to.path) {
+        case '/home/index':
+          this.$refs.menu.$data.currentActiveName = '1'
+          break
+        case '/home/PostsManage':
+          this.$refs.menu.$data.currentActiveName = '2'
+          break
+        default:
+          break
+      }
     }
   }
 }

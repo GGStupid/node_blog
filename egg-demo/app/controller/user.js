@@ -70,6 +70,7 @@ class UserController extends Controller {
         msg: '密码不一致',
         success: false,
       };
+      return;
     }
     const user = await service.user.getUserByLoginName(name);
     if (user && user.name === name) {
@@ -79,6 +80,7 @@ class UserController extends Controller {
         msg: '用户名已存在',
         success: false,
       };
+      return;
     }
     password = bcrypt.hashSync(password, 10);
     await service.user.newAndSave(name, password);

@@ -12,7 +12,7 @@ const UserSchema = new Schema({
     required: true
   },
   createAt: {
-    type: Number,
+    type: Date,
     default: Date.now()
   }
 }, { versionKey: false })

@@ -6,7 +6,7 @@
       </Header>
       <Content>
         <div class="content-wrap">
-          <router-view/>
+          <router-view :key="Date.now()" />
         </div>
       </Content>
     </Layout>

@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrap">
-    <Menu ref="menu" mode="horizontal" active-name="1" :theme="theme" @on-select="selectHandle">
+    <Menu ref="menu" mode="horizontal" :theme="theme" @on-select="selectHandle">
       <MenuItem name="1">
       <Icon type="ios-paper"></Icon>
       首页

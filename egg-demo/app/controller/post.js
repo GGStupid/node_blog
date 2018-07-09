@@ -21,10 +21,26 @@ class PostController extends Controller {
 * @param  {String} id id
 * @return {object}  post 文章
 */
-  async queryPostById() {
+  async queryPostPvAdd() {
     const { ctx, service } = this;
     const id = ctx.params.id;
     const post = await service.post.queryPostPvAdd(id);
+    ctx.body = {
+      code: 200,
+      data: post,
+      msg: '成功',
+      success: true,
+    };
+  }
+  /*
+* 根据文章ID获取文章信息
+* @param  {String} id id
+* @return {object}  post 文章
+*/
+  async queryPostById() {
+    const { ctx, service } = this;
+    const id = ctx.params.id;
+    const post = await service.post.queryPostById(id);
     ctx.body = {
       code: 200,
       data: post,

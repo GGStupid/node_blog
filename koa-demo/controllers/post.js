@@ -38,9 +38,24 @@ module.exports = {
   * @param  {String} id id
   * @return {object}  post 文章
   */
-  async queryPostById (ctx) {
+  async queryPostPvAdd (ctx) {
     const id = ctx.params.id
     const post = await postService.queryPostPvAdd(id)
+    ctx.body = {
+      code: 200,
+      data: post,
+      msg: '成功',
+      success: true
+    }
+  },
+  /*
+  * 根据文章ID获取文章信息并更新pv
+  * @param  {String} id id
+  * @return {object}  post 文章
+  */
+  async queryPostById (ctx) {
+    const id = ctx.params.id
+    const post = await postService.queryPostById(id)
     ctx.body = {
       code: 200,
       data: post,

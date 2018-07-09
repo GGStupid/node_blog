@@ -51,6 +51,14 @@ module.exports = {
     return PostModel.findByIdAndUpdate(query, update, { new: 1 }).populate('author', { name: 1, _id: 0 }, 'User').exec();
   },
   /*
+  * 根据文章ID
+  * @param {String} id 文章Id
+  */
+  queryPostById (id) {
+    const query = { _id: id };
+    return PostModel.findByIdAndUpdate(query, { new: 1 }).populate('author', { name: 1, _id: 0 }, 'User').exec();
+  },
+  /*
   * 根据文章Id更新文章
   * @param {String} id 文章Id
   * @param {String} title 标题

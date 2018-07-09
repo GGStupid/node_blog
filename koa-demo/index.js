@@ -28,16 +28,23 @@ router.prefix('/koa/api')
 
 const userController = require('./controllers/user.js')
 const postController = require('./controllers/post.js')
+const uploadController = require('./controllers/upload.js')
+
 
 router.post('/user/login', userController.login)
 router.post('/user/register', userController.register)
 router.get('/post/all', postController.getAllPosts)
 router.get('/post/query/opts', postController.queryPostsByOpts)
-router.get('/post/id/:id', postController.queryPostById)
+router.get('/post/read/:id', postController.queryPostPvAdd)
+
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' });
+router.post('/upload/file', upload.single('image'))
 
 router.post('/post/add', tokenMid.checkToken, postController.addPost)
 router.get('/post/author/all', tokenMid.checkToken, postController.queryPostsByAuthor)
 router.post('/post/update', tokenMid.checkToken, postController.updatePost)
+router.get('/post/id/:id', tokenMid.checkToken, postController.queryPostById)
 router.post('/post/del', tokenMid.checkToken, postController.delPost)
 
 app.use(router.routes()).use(router.allowedMethods());

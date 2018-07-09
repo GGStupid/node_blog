@@ -28,8 +28,16 @@ module.exports = appInfo => {
   // post 403
   config.security = {
     csrf: {
-      ignoreJSON: true,
+      headerName: 'x-csrf-token', // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
     },
+  };
+
+  // qiniu
+  config.qn_config = {
+    accessKey: 'h09WPdx_Ps3l-WnlxeFOvyZAdTuvxoJB1iQkB7xj',
+    secretKey: 'CERT3UrVvuaKLOc0K0ZiSkw_K0LWH909xX3UsmjE',
+    bucket: 'test-galaxy',
+    origin: 'http://owmftov3y.bkt.clouddn.com/',
   };
 
   return config;

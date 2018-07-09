@@ -21,6 +21,12 @@ const codeMessage = {
   504: '网关超时'
 }
 
+function getCookie (name) {
+  const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+  let arr = document.cookie.match(reg)
+  if (arr) { return unescape(arr[2]) } else { return null }
+}
+
 function checkStatus (response) {
   if (response.status >= 200 && response.status < 300) {
     return response
@@ -40,7 +46,8 @@ const baseProxy = `/${process.env.NODE_ENV}/api`
 
 var instance = axios.create({
   timeout: 5000,
-  baseURL: baseProxy
+  baseURL: baseProxy,
+  headers: { 'x-csrf-token': getCookie('csrfToken') }
 })
 
 instance.interceptors.request.use(

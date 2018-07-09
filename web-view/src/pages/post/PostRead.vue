@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     getPostById () {
-      let url = `/post/id/${this.postId}`
+      let url = `/post/read/${this.postId}`
       this.$axios.get(url).then(res => {
         if (res.success) {
           this.title = res.data.title

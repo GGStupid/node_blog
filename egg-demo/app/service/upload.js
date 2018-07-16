@@ -35,5 +35,4 @@ class UpLoadService extends Service {
   }
 }
 
-module.exports = UpLoadService
-;
+module.exports = UpLoadService;

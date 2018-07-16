@@ -8,10 +8,10 @@ module.exports = {
   dev: {
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/vue/',
     proxyTable: {
       '/egg/api': {
-        target: 'http://localhost:3000',  // 接口域名
+        target: 'http://localhost:3000/',  // 接口域名
         changeOrigin: true,  //是否跨域
       },
       '/koa/api': {

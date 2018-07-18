@@ -6,7 +6,10 @@
       </Header>
       <Content>
         <div class="content-wrap">
-          <router-view :key="Date.now()" />
+          <router-view />
+        </div>
+        <div class="back-top" v-show="showBackTop" @click="goTop">
+          <Icon type="chevron-up" color='#fff' :size='30'></Icon>
         </div>
       </Content>
     </Layout>
@@ -15,6 +18,28 @@
 <script>
 import ComHeader from './ComHeader'
 export default {
+  data () {
+    return {
+      showBackTop: false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    goTop () {
+      document.querySelector('html').scrollTop = 0
+    },
+    handleScroll () {
+      let that = this
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      if (scrollTop <= 200) {
+        that.showBackTop = false
+      } else {
+        that.showBackTop = true
+      }
+    }
+  },
   components: {
     ComHeader
   }
@@ -39,6 +64,15 @@ export default {
   }
   .ivu-layout-footer {
     background-color: #fff;
+  }
+  .back-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
   }
 }
 </style>

@@ -32,6 +32,18 @@ export default {
       }
     }
   },
+  mounted () {
+    if (this.postId) {
+      this.getPostById()
+    }
+  },
+  watch: {
+    $route () {
+      this.postId = ''
+      this.formValidate.title = ''
+      this.formValidate.content = ''
+    }
+  },
   methods: {
     // 绑定@imgAdd event
     $imgAdd (pos, $file) {
@@ -92,11 +104,6 @@ export default {
           this.$Message.error(res.msg)
         }
       })
-    }
-  },
-  mounted () {
-    if (this.postId) {
-      this.getPostById()
     }
   }
 }

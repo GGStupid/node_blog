@@ -41,11 +41,8 @@ module.exports = appInfo => {
   };
 
   config.alinode = {
-    enable: true,
     appid: 'my app id',
     secret: 'my app secret',
-    error_log: '',
-    packages: '',
   };
 
   return config;

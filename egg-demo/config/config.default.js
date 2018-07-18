@@ -44,6 +44,8 @@ module.exports = appInfo => {
     enable: true,
     appid: 'my app id',
     secret: 'my app secret',
+    error_log: '',
+    packages: '',
   };
 
   return config;

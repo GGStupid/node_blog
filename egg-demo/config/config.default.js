@@ -40,10 +40,10 @@ module.exports = appInfo => {
     origin: 'http://owmftov3y.bkt.clouddn.com/',
   };
 
-  config.alinode = {
-    appid: 'my app id',
-    secret: 'my app secret',
-  };
+  // config.alinode = {
+  //   appid: 'my app id',
+  //   secret: 'my app secret',
+  // };
 
   return config;
 };

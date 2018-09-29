@@ -1,10 +1,7 @@
-## 使用vue,koa和egg去建一个简易的blog
+## 使用vue,egg去建一个简易的blog
 
 ### egg-demo
 egg-demo 是egg后台
-
-### koa-demo
-koa-demo 是koa后台
 
 ### web-view
 web-view 是前台页面
@@ -13,15 +10,6 @@ web-view 是前台页面
 ```
 git clone https://github.com/GGStupid/node_blog.git
 ```
-
-#### 登录注册
-![登录注册页](http://p4i4zcg0d.bkt.clouddn.com/1529552694219/login.png)
-#### 主页
-![主页](http://p4i4zcg0d.bkt.clouddn.com/1529552694219/homeindex.png)
-#### 文章管理
-![文章管理](http://p4i4zcg0d.bkt.clouddn.com/1529552694220/postmanage.png)
-#### 写文章和更新文章
-![写文章和更新文章](http://p4i4zcg0d.bkt.clouddn.com/1529552694215/addpost.png)
 
 ### 参考
 [Egg官网地址](https://eggjs.org/zh-cn/intro/index.html)

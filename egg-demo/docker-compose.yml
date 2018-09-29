@@ -1,0 +1,19 @@
+version: '1'
+services:
+  mongodb:
+    image: mongo:4.0
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+      
+  # nginx:
+  #   image: nginx:1.14-alpine
+  #   restart: always
+  #   volumes:
+  #     - ./nginx:/etc/nginx
+  #     - ./web-view/dist:/usr/share/nginx/html/
+  #   ports:
+  #     - 80:80
+  #   links:
+  #     - app_service

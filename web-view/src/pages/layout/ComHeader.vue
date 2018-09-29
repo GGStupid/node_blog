@@ -37,6 +37,23 @@ export default {
       return this.$store.state.user.name
     }
   },
+  watch: {
+    $route (to, from) {
+      switch (to.path) {
+        case '/home/index':
+          this.$refs.menu.$data.currentActiveName = '1'
+          break
+        case '/home/PostsManage':
+          this.$refs.menu.$data.currentActiveName = '2'
+          break
+        default:
+          break
+      }
+    }
+  },
+  mounted () {
+    this.searchPosts()
+  },
   methods: {
     selectHandle (v) {
       if (v === '1') {
@@ -70,20 +87,6 @@ export default {
           this.$Message.error(res.msg)
         }
       })
-    }
-  },
-  watch: {
-    $route (to, from) {
-      switch (to.path) {
-        case '/home/index':
-          this.$refs.menu.$data.currentActiveName = '1'
-          break
-        case '/home/PostsManage':
-          this.$refs.menu.$data.currentActiveName = '2'
-          break
-        default:
-          break
-      }
     }
   }
 }

@@ -21,19 +21,7 @@ export default {
   methods: {
     readPost (id) {
       this.$router.push(`/home/read/post/${id}`)
-    },
-    getPosts () {
-      this.$axios.get('/post/query/opts').then(res => {
-        if (res.success) {
-          this.$store.dispatch('homePosts', res.data)
-        } else {
-          this.$Message.error(res.msg)
-        }
-      })
     }
-  },
-  mounted () {
-    this.getPosts()
   }
 }
 </script>

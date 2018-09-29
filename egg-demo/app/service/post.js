@@ -28,7 +28,7 @@ class PostService extends Service {
   * @param {String} id 作者ID
   */
   queryPostsByAuthor(id) {
-    return this.ctx.model.Post.find({ author: id }).populate('author', { name: 1, _id: 0 }, 'User').exec();
+    return this.ctx.model.Post.find({ author: id }, { content: 0 }).populate('author', { name: 1, _id: 0 }, 'User').exec();
   }
   /*
   * 根据标题模糊搜索文章
@@ -40,7 +40,7 @@ class PostService extends Service {
       $or: [
         { title: { $regex: titleReg } },
       ],
-    }).populate('author', { name: 1, _id: 0 }, 'User').exec();
+    }, { content: 0 }).populate('author', { name: 1, _id: 0 }, 'User').exec();
   }
   /*
   * 根据文章ID更新pv值并返回文章信息

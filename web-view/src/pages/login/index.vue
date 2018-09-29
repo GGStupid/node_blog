@@ -5,12 +5,12 @@
     <Form ref="formInline" :model="formInline" :rules="ruleInline">
       <FormItem prop="name">
         <Input type="text" v-model="formInline.name" placeholder="用户名">
-        <Icon type="ios-person-outline" slot="prepend"></Icon>
+        <Icon type="ios-person-outline" slot="prepend" />
         </Input>
       </FormItem>
       <FormItem prop="password">
         <Input type="password" v-model="formInline.password" placeholder="密码">
-        <Icon type="ios-locked-outline" slot="prepend"></Icon>
+        <Icon type="ios-lock-outline" slot="prepend" />
         </Input>
       </FormItem>
       <FormItem>

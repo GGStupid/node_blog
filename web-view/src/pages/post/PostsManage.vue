@@ -59,9 +59,7 @@ export default {
           }
         }
       ],
-      data1: [
-
-      ]
+      data1: []
     }
   },
   methods: {

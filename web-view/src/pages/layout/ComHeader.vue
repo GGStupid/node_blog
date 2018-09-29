@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrap">
-    <Menu ref="menu" mode="horizontal" :theme="theme" @on-select="selectHandle">
+    <Menu ref="menu" mode="horizontal" :theme="theme" :active-name="activeName" @on-select="selectHandle">
       <MenuItem name="1">
       <Icon type="ios-paper"></Icon>
       首页
@@ -27,7 +27,7 @@
 export default {
   data () {
     return {
-      name: '',
+      activeName: '1',
       theme: 'light',
       search: ''
     }
@@ -37,24 +37,24 @@ export default {
       return this.$store.state.user.name
     }
   },
-  watch: {
-    $route (to, from) {
-      switch (to.path) {
+  mounted () {
+    this.isHomeHandle()
+    this.searchPosts()
+  },
+  methods: {
+    isHomeHandle () {
+      let route = this.$route
+      switch (route.path) {
         case '/home/index':
-          this.$refs.menu.$data.currentActiveName = '1'
+          this.activeName = '1'
           break
         case '/home/PostsManage':
-          this.$refs.menu.$data.currentActiveName = '2'
+          this.activeName = '2'
           break
         default:
           break
       }
-    }
-  },
-  mounted () {
-    this.searchPosts()
-  },
-  methods: {
+    },
     selectHandle (v) {
       if (v === '1') {
         this.$router.push('/home')
@@ -65,7 +65,7 @@ export default {
       }
     },
     writeArticle () {
-      this.$refs.menu.$data.currentActiveName = ''
+      this.activeName = ''
       this.$router.push('/home/add/post')
     },
     goLogin () {

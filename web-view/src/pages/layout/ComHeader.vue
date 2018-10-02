@@ -27,7 +27,7 @@
 export default {
   data () {
     return {
-      activeName: '1',
+      activeName: '',
       theme: 'light',
       search: ''
     }
@@ -65,7 +65,7 @@ export default {
       }
     },
     writeArticle () {
-      this.activeName = ''
+      this.$refs.menu.$data.currentActiveName = ''
       this.$router.push('/home/add/post')
     },
     goLogin () {
